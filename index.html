@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zéus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="zeus-icon.png">
+</head>
+<body class="overflow-x-hidden antialiased">
+
+    <div id="app"></div>
+
+    <script type="module" src="src/main.js"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker enregistré !'))
+        .catch((err) => console.log('Échec enregistrement:', err));
+    });
+  }
+</script>
+</body>
+</html>
